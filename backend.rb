@@ -68,7 +68,6 @@ post "/verification/token" do
   payload = {
     app_id: 1,
     phone_number: params[:phone_number],
-    via: "sms",
     iat: Time.now.to_i
   }
 
