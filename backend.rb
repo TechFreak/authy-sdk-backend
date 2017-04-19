@@ -62,11 +62,11 @@ post "/registration" do
   respond_with status: StatusFailed, body: {message: parsed_response["message"]}
 end
 
-post "/verification/token" do
+post "/verify/token" do
   param :phone_number, String, required: true
 
   payload = {
-    app_id: 1,
+    app_id: ENV["APP_ID"],
     phone_number: params[:phone_number],
     iat: Time.now.to_i
   }
